@@ -1,3 +1,13 @@
+# Build files
+dist
+lib
+
+# Temp folders
+__temp*
+
+# Npm
+package_lock.json
+
 # Logs
 logs
 *.log

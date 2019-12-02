@@ -1,0 +1,45 @@
+{
+  "name": "thebrain-uuid-slug",
+  "version": "1.0.0",
+  "description": "Encode TheBrain uuids to 22 characters slugs and decode slugs to uuids",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "@types/tape": "^4.2.33",
+    "prettier": "^1.19.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0",
+    "typescript": "^3.7.2"
+  },
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "rm -rf lib/* && tsc --build tsconfig.deploy.json",
+    "test": "node lib/index.test.js | tap-spec",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && rm -rf lib/**/*.test.*",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmakeev/thebrain-uuid-slug.git"
+  },
+  "keywords": [
+    "thebrain",
+    "uuid",
+    "slug",
+    "decode",
+    "encode"
+  ],
+  "author": "Vitaliy V. Makeev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmakeev/thebrain-uuid-slug/issues"
+  },
+  "homepage": "https://github.com/wmakeev/thebrain-uuid-slug#readme"
+}
